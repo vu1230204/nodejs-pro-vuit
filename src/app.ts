@@ -8,6 +8,8 @@ app.set("view engine", "ejs");
 app.set("views", __dirname + "/view");
 //config routes
 webRoutes(app);
+//config static files : images/css/js
+app.use(express.static("public"));
 
 app.listen(8080, () => {
   console.log(`My App is running on port : ${PORT}`);
