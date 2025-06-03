@@ -18,6 +18,5 @@ app.use(express.static("public"));
 webRoutes(app);
 
 app.listen(8080, () => {
-  console.log(`My App is running on port : ${PORT}`);
-  console.log(__dirname + "/view");
+  console.log(`My App is running on port: ${PORT}`);
 });

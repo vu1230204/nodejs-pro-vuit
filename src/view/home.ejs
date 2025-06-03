@@ -18,8 +18,43 @@
     ></script>
   </head>
   <body>
-    <h1>Hello from ejs from controller</h1>
-    <!-- <img src="/images/hoidanit.jpg" alt="" /> -->
-    <a href="/create-user" class="btn btn-warning"> Create a new user</a>
+    <div style="margin: 25">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <h1>List Users:</h1>
+        <div>
+          <a href="/create-user" class="btn btn-warning"> Create a new user</a>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <table class="table table-hover table-bordered">
+          <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Action</th>
+          </thead>
+          <tbody>
+            <% results.forEach( function (result) { %>
+            <li><%= result.title %></li>
+            <% }) %>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+              <td>Mexico</td>
+              <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </body>
 </html>
