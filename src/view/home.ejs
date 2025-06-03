@@ -42,16 +42,16 @@
             <th>Action</th>
           </thead>
           <tbody>
-            <% results.forEach( function (result) { %>
-            <li><%= result.title %></li>
-            <% }) %>
+            <% users.forEach( function (user) { %>
+
             <tr>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
-              <td>Mexico</td>
+              <td><%= user.id %></td>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.address %></td>
               <td><button class="btn btn-danger">Delete</button></td>
             </tr>
+            <% }) %>
           </tbody>
         </table>
       </div>
