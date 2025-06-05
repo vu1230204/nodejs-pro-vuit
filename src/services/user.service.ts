@@ -1,5 +1,4 @@
 import { prisma } from "src/config/client";
-import getConnection from "../config/database";
 
 const handleCreateUser = async (
   name: string,
@@ -21,18 +20,10 @@ const getAllUsers = async () => {
   return user;
 };
 const handleDeleteUser = async (id: string) => {
-  try {
-    const connection = await getConnection();
-    const sql = "DELETE FROM `user` WHERE `id` = ?";
-    const values = [id];
-
-    const [result, fields] = await connection.execute(sql, values);
-
-    return result;
-  } catch (err) {
-    console.log(err);
-    return [];
-  }
+  const result = await prisma.user.delete({
+    where: { id: +id },
+  });
+  return result;
 };
 const getUserById = async (id: string) => {
   const user = await prisma.user.findUnique({
